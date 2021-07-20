@@ -1,10 +1,10 @@
 CC = clang++
 
-NAME = strings
+NAME = phonebook
 
 RM = rm -f
 
-SRCS := main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
+SRCS := Contacts.cpp Phonebook.cpp main.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

@@ -1,29 +1,26 @@
 #include <iostream>
-#include <string.h>
+#include <cstring>
 
 int main(int ac, char **argv)
 {
-	int i = 1;
-	char ch;
-	size_t j = 0;
-	std::string str;
+	std::string	str;
+	char		ch;
+	size_t		j = 0;
 
-	if (ac != 1)
-	{
-		while (i < ac)
-		{
+	if (ac != 1) {
+		for (int i = 1; i < ac; i++) {
+			if (i != 1)
+				std::cout << " ";
 			str = argv[i];
 			j = 0;
-			while (j < str.length())
-			{
-				ch = toupper(str[j]); // Can I use?
+			while (j < str.length()) {
+				ch = std::toupper(str[j]);
 				std::cout << ch;
 				j++;
 			}
-			i++;
 		}
 		std::cout << std::endl;
-	}
-	else
+	} else {
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
+	}
 }

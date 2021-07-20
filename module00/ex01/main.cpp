@@ -1,26 +1,24 @@
 #include <iostream>
-#include <string.h>
-#include "phonebook.hpp"
+#include "Phonebook.hpp"
 
 int main(int ac, char **argv)
 {
-	int k = 0;
-	std::string str;
+	std::string	str;
 
-	phonebook PhoneBook;
-	while (1)
-	{
+	Phonebook	phonebook;
+	while (1) {
 		std::cout << "write one of the options: ADD SEARCH EXIT" << std::endl;
-		std::cin >> str;
-		if (str == "ADD")
-		{
-			PhoneBook.AddContact(k);
-			k++;
+		getline(std::cin, str);
+		if (str == "ADD") {
+			phonebook.AddContact();
+			std::cin.ignore();
 		}
 		else if (str == "SEARCH")
-			PhoneBook.Show(k);
+			phonebook.Show();
 		else if (str == "EXIT")
 			return (0);
+		else
+			std::cout << "There is a mistake, try again\n";
 	}
 	return (0);
 }

@@ -1,22 +1,24 @@
-#include "contacts.hpp"
+#ifndef PHONEBOOK_HPP
+# define PHONEBOOK_HPP
+#include "Contacts.hpp"
 
-class phonebook{
-	public:
-		contact people[8];
+class Phonebook{
 
-	void	AddContact(int k){
-		if (k > 8)
-			k = 7;
-		for (int i = 0; i < 5; i++)
-		{
-			people[k].print(i);
-			people[k].setData(i);
-		}
-	}
-	void	Show(int k)
-	{
-		std::cout << "index     " << "fist name " << "last name " << "nickname  " << std::endl;
-		for (int i = 0 ; i < k; i++)
-			people[i].printContent(i);
-	}
+public:
+
+	void	AddContact();
+	int		CorrectFormat(std::string str);
+	void	print(std::string str);
+	void	Show();
+	Phonebook(void);
+
+private:
+
+	Contact	people[8];
+	int		_contact_index;
+	int		_contact_limit;
+	int		_TableWidth;
+
 };
+
+#endif

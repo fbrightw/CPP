@@ -1,10 +1,10 @@
 CC = clang++
 
-NAME = strings
+NAME = database
 
 RM = rm -f
 
-SRCS := main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
+SRCS := Account.cpp tests.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

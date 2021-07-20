@@ -8,7 +8,7 @@ class FileDealing
 public:
 
 	FileDealing(std::string str1, std::string str2, std::string fileName);
-	void		Replace();
+	int		open();
 
 private:
 
@@ -16,7 +16,8 @@ private:
 	std::string	_str2;
 	std::string	_fileName;
 	std::string	_text;
-	void		output();
+	int		output();
+	int		replace(std::string *line);
 
 };
 #endif

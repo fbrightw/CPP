@@ -1,6 +1,6 @@
-NAME = ex00
+NAME = ex02
 
-SRCS = main.cpp newZombie.cpp randomChump.cpp Zombie.cpp
+SRCS = main.cpp Fixed.cpp
 
 CXXFLAGS = -g -Wall -Wextra -Werror -std=c++98 -fsanitize=address
 

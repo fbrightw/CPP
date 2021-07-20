@@ -7,15 +7,39 @@ FileDealing::FileDealing(std::string str1, std::string str2, std::string fileNam
 	_fileName = fileName;
 }
 
-void	FileDealing::output()
+int	FileDealing::output()
 {
 	std::ofstream	_output;
 	_output.open("text.replace");
-	_output << _text;
-	_output.close();
+	if (!_output.is_open()) {
+		std::cout << "There is error in opening replace file";
+		return (0);
+	}
+	else {
+		_output << _text;
+		_output.close();
+		return (1);
+	}
 }
 
-void	FileDealing::Replace()
+int	FileDealing::replace(std::string *line)
+{
+	int i = 0;
+	while (i < line->length())
+	{
+		int index = line->find(_str1);
+		if (index != std::string::npos) {
+			line->erase(index, _str1.length());
+			line->insert(index, _str2);
+			i += index + _str2.length();
+		}
+		else
+			return (0);
+	}
+	return (1);
+}
+
+int	FileDealing::open()
 {
 	std::string		line;
 	std::ifstream	_input;
@@ -23,22 +47,19 @@ void	FileDealing::Replace()
 	_input.open(_fileName, std::ios::in);
 	if (_input.is_open()) {
 		while (!_input.eof()) {
-			_input >> line;
-			if (_input.peek() == '\n') {
-				_text += line + "\n";
-				_text.replace(_text.find(_str1), _str1.length(), _str2);
-				line.clear();
-			}
-			else if (_input.peek() == ' ') {
-				_text += line + " ";
-				line.clear();
-			}
-			else
-				_text += line;
+			std::getline(_input, line);
+			FileDealing::replace(&line);
+			_text += line + "\n";
+			line.clear();
 		}
 		_input.close();
-		FileDealing::output();
+		if (!FileDealing::output())
+			return (0);
+		return (1);
 	}
 	else
+	{
 		std::cout << "Unable to open file" << std::endl;
+		return (0);
+	}
 }
