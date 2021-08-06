@@ -34,6 +34,7 @@ void	Karen::complain(void)
 }
 void	Karen::complain(int level)
 {
+	// enum class msgs {DEBUG, INFO, WARNING, ERROR};
 	switch (level)
 	{
 		case 1:
