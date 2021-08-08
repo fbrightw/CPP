@@ -2,6 +2,7 @@
 # define CHARACTER_HPP
 
 #include "ICharacter.hpp"
+#include "AMateria.hpp"
 
 class Character : public ICharacter {
 	private:
@@ -10,9 +11,11 @@ class Character : public ICharacter {
 		int			index;
 
 	public:
+		Character( void );
 		Character(std::string name);
 		Character &operator=(Character const &ohther);
 		~Character();
+
 		std::string const & getName() const;
 		void equip(AMateria* m);
 		void unequip(int idx);

@@ -8,4 +8,4 @@ AMateria::AMateria(std::string const & type) { this->type = type; }
 
 std::string const & AMateria::getType() const { return (type); }
 
-void AMateria::use(ICharacter& target) {}
+void AMateria::use(ICharacter& target) { target.getName();}
