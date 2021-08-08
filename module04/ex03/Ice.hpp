@@ -5,13 +5,10 @@
 
 class Ice : public AMateria {
 	public:
-		std::string type;
-
-	private:
-
-
-	protected:
-
+		Ice( void );
+		~Ice( void );
+		void use(ICharacter& target);
+		AMateria* clone() const;
 };
 
 #endif
