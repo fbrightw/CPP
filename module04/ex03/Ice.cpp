@@ -5,9 +5,18 @@ Ice::Ice( void )
 	type = "ice";
 }
 
+Ice::~Ice( void ) {}
+
+Ice::Ice (Ice &other) { *this = other; }
+
+Ice &Ice::operator=(Ice &other) {
+	this->type = other.type;
+	return (*this);
+}
+
 AMateria* Ice::clone() const
 {
-	return (new Ice(*this));
+	return (new Ice());
 }
 
 void Ice::use(ICharacter& target)
