@@ -1,9 +1,6 @@
 #include "Ice.hpp"
 
-Ice::Ice( void )
-{
-	type = "ice";
-}
+Ice::Ice( void ) : AMateria("ice") { type = "ice"; }
 
 Ice::~Ice( void ) {}
 
@@ -14,10 +11,7 @@ Ice &Ice::operator=(Ice &other) {
 	return (*this);
 }
 
-AMateria* Ice::clone() const
-{
-	return (new Ice());
-}
+AMateria* Ice::clone() const { return (new Ice()); }
 
 void Ice::use(ICharacter& target)
 {

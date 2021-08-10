@@ -1,5 +1,5 @@
 #include "MateriaSource.hpp"
-#include "AMateria.hpp"
+// #include "AMateria.hpp"
 
 MateriaSource::MateriaSource()
 {
@@ -59,9 +59,10 @@ void MateriaSource::learnMateria(AMateria* m)
 
 AMateria* MateriaSource::createMateria(std::string const & type)
 {
-	for (int i = 0; i < this->m_index; i++) {
+	for (int i = 0; i < 4; i++) {
 		if (materias[i]->getType().compare(type) == 0) {
-			return (materias[i]->clone());
+			// std::cout << materias[i]->getType() << std::endl;
+			return (this->materias[i]->clone());
 		}
 	}
 	return NULL;

@@ -2,7 +2,7 @@ NAME = ex03
 
 SRCS = main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp
 
-CXXFLAGS = -g -Wall -Wextra -Werror -std=c++98 -fsanitize=address
+CXXFLAGS = -g -Wall -Wextra -Werror -std=c++98
 
 CXX = clang++
 

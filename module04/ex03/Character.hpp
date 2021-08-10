@@ -6,7 +6,7 @@
 
 class Character : public ICharacter {
 	private:
-		std::string	Name;
+		std::string	_Name;
 		AMateria*	materias[4];
 		int			m_index;
 
