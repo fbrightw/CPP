@@ -1,5 +1,4 @@
 #include "MateriaSource.hpp"
-// #include "AMateria.hpp"
 
 MateriaSource::MateriaSource()
 {
@@ -13,9 +12,12 @@ MateriaSource::MateriaSource()
 MateriaSource::~MateriaSource()
 {
 	for (int i = 0; i < 4; i++) {
-		if (materias[i])
-			delete materias[i];
-		materias[i] = NULL;
+		if (this->materias[i])
+		{
+			std::cout << "deleted";
+			delete this->materias[i];
+			this->materias[i] = NULL;
+		}
 	}
 }
 
@@ -27,9 +29,9 @@ MateriaSource::MateriaSource(MateriaSource &other)
 {
 	for (int i = 0; i < 4; i++)
 	{
-		if (materias[i])
-			delete materias[i];
-		materias[i] = other.getMateria(i);
+		if (this->materias[i])
+			delete this->materias[i];
+		this->materias[i] = other.materias[i]->clone();
 	}
 	m_index = other.getIndex();
 }
@@ -38,9 +40,9 @@ MateriaSource &MateriaSource::operator=(MateriaSource &other)
 {
 	for (int i = 0; i < 4; i++)
 	{
-		if (materias[i])
-			delete materias[i];
-		materias[i] = other.getMateria(i);
+		if (this->materias[i])
+			delete this->materias[i];
+		this->materias[i] = other.materias[i]->clone();
 	}
 	m_index = other.getIndex();
 	return (*this);

@@ -16,16 +16,16 @@ Character::Character(std::string name) : _Name(name)
 
 Character::~Character()
 {
-	for (int i = 0; i < m_index; i++) {
+	for (int i = 0; i < 4; i++) {
 		if (materias[i])
-			delete materias[i];
+			delete this->materias[i];
 		this->materias[i] = NULL;
 	}
 }
 
 AMateria*	Character::getMateria(int idx) { return (materias[idx]); }
 
-int			Character::getIndex() { 
+int			Character::getIndex() {
 	return (this->m_index); }
 
 Character::Character(Character &other)
@@ -36,7 +36,7 @@ Character::Character(Character &other)
 	{
 		if (materias[i])
 			delete this->materias[i];
-		this->materias[i] = other.getMateria(i);
+		this->materias[i] = other.materias[i]->clone();
 	}
 }
 
@@ -48,7 +48,7 @@ Character &Character::operator=(Character &other)
 	{
 		if (this->materias[i])
 			delete this->materias[i];
-		this->materias[i] = other.getMateria(i);
+		this->materias[i] = other.materias[i]->clone();
 	}
 	return (*this);
 }
