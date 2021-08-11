@@ -12,7 +12,9 @@ class Brain {
 		Brain(Brain const &another);
 		Brain &operator=(const Brain &assigning);
 		void setRandomWords();
-		std::string getIdeas();
+		std::string *getIdeas();
+		void		setIdeas(std::string massive[100]);
+
 	private:
 		std::string ideas[100];
 };

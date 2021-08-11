@@ -25,7 +25,13 @@ Brain &Brain::operator=(const Brain &assigning)
 	return (*this);
 }
 
-std::string Brain::getIdeas() { return (ideas[100]); }
+void	Brain::setIdeas(std::string massive[100])
+{
+	for (int i = 0; i < 100; i++)
+		massive[i] = ideas[i];
+}
+
+std::string *Brain::getIdeas() { return (ideas); }
 
 void	Brain::setRandomWords()
 {
