@@ -2,6 +2,7 @@
 # define BUREAUCRAT_HPP
 
 #include <iostream>
+#include "Form.hpp"
 
 class Bureaucrat {
 
@@ -30,6 +31,8 @@ class Bureaucrat {
         int         getGrade() const;
         void GoIncrement();
         void GoDecrement();
+
+        void            signForm(Form &a);
 };
 
 std::ostream	&operator<<(std::ostream &out, const Bureaucrat &bur);

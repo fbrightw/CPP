@@ -2,17 +2,12 @@
 
 int main()
 {
-    Bureaucrat first("Jack", 0);
-    int grade = first.getGrade();
-
     try {
-        if (grade > 150)
-            throw first.GradeTooLowException();
-        if (grade < 1)
-            throw first.GradeTooHighException();
+        // Bureaucrat first("Jack", 0);
+        Bureaucrat second("Jack", 160);
     }
     catch (std::exception &e) {
-       std::cout << "end of exception" << std::endl;
+       std::cout << e.what() << std::endl;
     }
 
 }
