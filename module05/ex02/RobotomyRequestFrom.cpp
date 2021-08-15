@@ -6,18 +6,21 @@ RobotomyRequestForm::RobotomyRequestForm(std::string target) : _target(target), 
 
 RobotomyRequestForm::~RobotomyRequestForm( void ) {}
 
-RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const &another) {}
+RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const &another) : Form(another) {}
 
-RobotomyRequestForm & RobotomyRequestForm::operator=(RobotomyRequestForm &anither) {}
+RobotomyRequestForm & RobotomyRequestForm::operator=(RobotomyRequestForm &another) {
+    Form::operator=(another);
+    return (*this);
+}
 
 void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
-    if (!(executor.getGrade() < Form::getG_Sign()))
-        throw GradeTooLowException();
+    if (!(executor.getGrade() < Form::getG_Exec()))
+        throw Form::ExecuteTooHighException();
     if (!(Form::getwhetherSigned()))
-        throw GradeTooLowException();
-    if  () {
-         std::cout << "Bzzz..... Bdish... some noises that I can't sound" << std::endl;
+        throw Form::FormIsNotSignedException();
+    std::cout << "Bzzz..... Bdish... some noises that I can't sound" << std::endl;
+    if (rand() % 2 ) {
         std::cout << _target << "has been robotomized successfully 50% of the time. " << std::endl;
     }
     else

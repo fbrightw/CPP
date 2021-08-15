@@ -37,6 +37,16 @@ class Form {
                 virtual const char *what() const throw(); 
         };
 
+        class ExecuteTooHighException: public std::exception {
+            public:
+                virtual const char *what() const throw(); 
+        };
+
+        class FormIsNotSignedException: public std::exception {
+            public:
+                virtual const char *what() const throw(); 
+        };
+
         virtual void execute(Bureaucrat const & executor) const = 0;
 };
 
