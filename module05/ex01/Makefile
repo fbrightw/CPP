@@ -1,10 +1,10 @@
-NAME = ex00
+NAME = ex01
 
 SRCS = main.cpp Bureaucrat.cpp Form.cpp
 
 HEADER = Bureaucrat.hpp Form.hpp
 
-CXXFLAGS = -g -Wall -Wextra -Werror -std=c++98 
+CXXFLAGS = -g -Wall -Wextra -Werror -std=c++98
 
 CXX = clang++
 

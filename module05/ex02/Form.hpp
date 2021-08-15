@@ -5,13 +5,15 @@
 
 #include <iostream>
 
+class Bureaucrat; 
+
 class Form {
 
     private:
         std::string _name;
-        bool        _isSigned;
         int         _gradeForSign;
         int         _gradeForExec;
+        bool        _isSigned;
 
     public:
         Form( void );

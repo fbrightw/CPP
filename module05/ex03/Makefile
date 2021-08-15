@@ -1,8 +1,8 @@
-NAME = ex02
+NAME = ex00
 
-SRCS = main.cpp Bureaucrat.cpp Form.cpp PresidentialPardonForm.cpp ShrubberyCreationForm.cpp  RobotomyRequestForm.cpp 
+SRCS = main.cpp Bureaucrat.cpp Form.cpp  PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
 
-HEADER = Bureaucrat.hpp Form.hpp PresidentialPardonForm.hpp ShrubberyCreationForm.hpp RobotomyRequestForm.hpp
+HEADER = Bureaucrat.hpp Form.hpp PresidentialPardonForm.hpp RobotomyRequestForm.cpp ShrubberyCreationForm.hpp
 
 CXXFLAGS = -g -Wall -Wextra -Werror -std=c++98 
 

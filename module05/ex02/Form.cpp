@@ -1,15 +1,15 @@
 #include "Form.hpp"
 
-Form::Form( void ) : _name("no"), _gradeForExec(150), _gradeForSign(150), _isSigned(false) {}
+Form::Form( void ) : _name("no"), _gradeForSign(150), _gradeForExec(150), _isSigned(false) {}
 
 Form::~Form(void ) {}
 
-Form::Form (std::string name, int gradeToSign, int gradeToExecute, bool isSigned) :
+Form::Form (const std::string name, const int gradeToSign, const int gradeToExecute, const bool isSigned) :
     _name(name), _gradeForSign(gradeToSign), _gradeForExec(gradeToExecute), _isSigned(isSigned) 
 {
-    if (!((_gradeForSign && _gradeForExec)) < 150 )
+    if (_gradeForSign > 150 || _gradeForExec > 150)
         throw GradeTooLowException();
-    if (!((_gradeForSign && _gradeForExec)) > 1 )
+     if (_gradeForSign < 1 || _gradeForExec < 1)
         throw GradeTooHighException();
 }
 

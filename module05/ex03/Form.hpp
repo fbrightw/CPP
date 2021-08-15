@@ -1,17 +1,17 @@
 #ifndef FORM_HPP
 # define FORM_HPP
 
-#include <iostream>
+#include "Bureaucrat.hpp"
 
-class Bureaucrat;
+#include <iostream>
 
 class Form {
 
     private:
         std::string _name;
+        bool        _isSigned;
         int         _gradeForSign;
         int         _gradeForExec;
-        bool        _isSigned;
 
     public:
         Form( void );
@@ -36,6 +36,18 @@ class Form {
             public:
                 virtual const char *what() const throw(); 
         };
+
+        class ExecuteTooHighException: public std::exception {
+            public:
+                virtual const char *what() const throw(); 
+        };
+
+        class FormIsNotSignedException: public std::exception {
+            public:
+                virtual const char *what() const throw(); 
+        };
+
+        virtual void execute(Bureaucrat const & executor) const = 0;
 };
 
 std::ostream	&operator<<(std::ostream &out, const Form &obj);

@@ -2,7 +2,8 @@
 # define BUREAUCRAT_HPP
 
 #include <iostream>
-#include "Form.hpp"
+
+class Form;
 
 class Bureaucrat {
 
@@ -24,7 +25,7 @@ class Bureaucrat {
 
         class GradeTooLowException : public std::exception {
             public:
-                virtual const char *what() const throw(); 
+                virtual const char *what() const throw();
         };
 
         std::string getName() const;
