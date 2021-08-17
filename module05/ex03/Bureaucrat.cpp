@@ -50,6 +50,7 @@ const char	*Bureaucrat::GradeTooHighException::what() const throw()
 std::ostream	&operator<<(std::ostream &out, const Bureaucrat &bur)
 {
     out << bur.getName() << " , bureaucrat grade" << bur.getGrade() << " ." << std::endl;
+	return (out);
 }
 
 void            Bureaucrat::signForm(Form &a)
