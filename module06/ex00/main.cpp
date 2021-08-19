@@ -9,9 +9,9 @@ int main(int ac, char **argv)
         return (1);
     }
     
-    double nmbr = std::atof(argv[1]);
+    // double nmbr = std::atof(argv[1]);
     
     // std::cout << nmbr << std::endl;
-    Cast converting(nmbr);
+    Cast converting(argv[1]);
 
 }
