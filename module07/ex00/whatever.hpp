@@ -3,25 +3,25 @@
 
 #include <iostream>
 
-template<typename Type>
-Type min(Type a, Type b) {
+template<typename T>
+T min(T a, T b) {
     if (a < b) {
         return a;
     }
     return b;
 };
 
-template<typename Type>
-Type max(Type a, Type b) {
+template<typename T>
+T max(T a, T b) {
     if (a > b) {
         return a;
     }
     return b;
 };
 
-template<typename Type>
-void swap(Type &a, Type &b) {
-    Type temp = a;
+template<typename T>
+void swap(T &a, T &b) {
+    T temp = a;
     a = b;
     b = temp;
 };
