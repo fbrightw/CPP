@@ -1,8 +1,8 @@
-NAME = ex00
+NAME = ex02
 
 SRCS = main.cpp
 
-CXXFLAGS = -g -Wall -Wextra -Werror -std=c++98 
+CXXFLAGS = -g -Wall -Wextra -Werror -std=c++98
 
 CXX = clang++
 
