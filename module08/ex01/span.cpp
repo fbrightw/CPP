@@ -19,25 +19,19 @@ void Span::addNumber(int value) {
 unsigned int Span::longestSpan() {
     if (_len <= 1)
         throw AddNumberError();
-    int remainder = INT_MIN;
-    for (unsigned int i = 0; i < _len - 1; i++) {
-        for (unsigned int j = i + 1; j < _len; j++) {
-            if (abs(_arr[i] - _arr[j]) > remainder)
-                remainder = _arr[i] - _arr[j];
-        }
-    }
-    return remainder;
+    std::sort(_arr.begin(), _arr.end());
+    return _arr.end() - _arr.begin();
 }
 
 unsigned int Span::shortestSpan() {
     if (_len <= 1)
         throw AddNumberError();
-    int remainder = INT_MAX;
+    std::sort(_arr.begin(), _arr.end());
+    int remainder = _arr.end() - _arr.begin();
+    std::cout << remainder << std::endl;
     for (unsigned int i = 0; i < _len - 1; i++) {
-        for (unsigned int j = i + 1; j < _len; j++) {
-            if (abs(_arr[i] - _arr[j]) < remainder)
-                remainder = _arr[i] - _arr[j];
-        }
+        if (abs(_arr[i] - _arr[i + 1]) < remainder)
+            remainder = _arr[i] - _arr[i + 1];
     }
     return remainder;
 }
